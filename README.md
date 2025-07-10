@@ -13,11 +13,43 @@ npm install -g vamos-cli
 ### Local Kurulum (Geliştirme)
 
 ```bash
-git clone https://github.com/vamos-ai/vamos.git
-cd vamos/apps/cli
+git clone https://github.com/Egv2/vamos-cli.git
+cd vamos-cli
 npm install
 npm run build-production
 npm link
+```
+
+### VPS Kurulumu
+
+VPS'e direkt kurulum için deployment script'lerini kullanabilirsiniz:
+
+#### Hızlı VPS Kurulumu
+
+```bash
+# Tüm proje dosyalarını VPS'e kopyaladıktan sonra
+sudo ./scripts/deploy-vps.sh
+```
+
+#### Manuel VPS Kurulumu
+
+```bash
+# Ana deployment script'i ile
+./scripts/deploy.sh vps
+
+# Özel parametrelerle
+CLI_TARGET="/opt/my-vamos" SERVICE_USER="myuser" ./scripts/deploy.sh vps
+```
+
+#### VPS Environment Ayarları
+
+Deployment sırasında aşağıdaki environment variable'lar otomatik ayarlanır:
+
+```bash
+export VAMOS_SUPABASE_URL="http://167.235.183.107:8000"
+export VAMOS_SUPABASE_ANON_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+export VAMOS_BACKEND_URL="http://167.235.183.107:3001"
+export VAMOS_DEFAULT_LANGUAGE="auto"
 ```
 
 ## ⚙️ Konfigürasyon
@@ -155,6 +187,49 @@ npm run build-production
 npm test
 ```
 
+## 🚀 Deployment
+
+### Local Production Build
+
+```bash
+# Basit production build
+./scripts/deploy.sh local
+
+# Veya sadece
+./scripts/deploy.sh
+```
+
+### VPS Deployment
+
+```bash
+# Hızlı VPS deployment (interaktif)
+./scripts/deploy-vps.sh
+
+# Direkt VPS deployment
+./scripts/deploy.sh vps
+
+# Özel parametrelerle
+CLI_TARGET="/opt/vamos" SERVICE_USER="vamos" ./scripts/deploy.sh vps
+```
+
+### Deployment Script Parametreleri
+
+| Environment Variable | Açıklama           | Varsayılan Değer |
+| -------------------- | ------------------ | ---------------- |
+| `CLI_SOURCE`         | Kaynak dizin       | Mevcut dizin     |
+| `CLI_TARGET`         | Hedef dizin (VPS)  | `/opt/vamos-cli` |
+| `SERVICE_USER`       | Servis kullanıcısı | `vamos`          |
+| `VAMOS_ENV`          | Environment tipi   | `production`     |
+
+### VPS Deployment Özellikleri
+
+- ✅ Otomatik servis kullanıcısı oluşturma
+- ✅ Environment variable'ları otomatik ayarlama
+- ✅ Global CLI erişimi
+- ✅ Production build ve test
+- ✅ Sistem geneli konfigürasyon
+- ✅ Güvenlik ayarları
+
 ## 📄 Lisans
 
 MIT License - [Vamos AI](https://vamos-ai.com)
@@ -167,5 +242,4 @@ MIT License - [Vamos AI](https://vamos-ai.com)
 
 ---
 
-**Vamos AI CLI v1.0.0** | Made with ❤️ in Turkey
-# vamos-cli
+**Vamos AI CLI v1.0.0** | Made with ❤️ in Galata

@@ -1,0 +1,71 @@
+{
+  "name": "vamos-cli",
+  "version": "1.0.0",
+  "description": "Vamos AI CLI tool for bulk video uploads",
+  "main": "dist/index.js",
+  "bin": {
+    "vamos": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc && chmod +x dist/index.js",
+    "build-production": "npm run clean && tsc && chmod +x dist/index.js",
+    "build-force": "tsc --skipLibCheck --noEmitOnError false && chmod +x dist/index.js",
+    "dev": "tsx src/index.ts",
+    "start": "node dist/index.js",
+    "clean": "rm -rf dist",
+    "rebuild": "npm run clean && npm run build",
+    "test": "npm run build && node dist/index.js --version",
+    "prepublishOnly": "npm run build-production",
+    "postinstall": "npm run build-production"
+  },
+  "keywords": [
+    "vamos",
+    "ai",
+    "cli",
+    "video",
+    "transcription",
+    "bulk-upload",
+    "typescript"
+  ],
+  "author": "Vamos AI",
+  "license": "MIT",
+  "homepage": "https://vamos-ai.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vamos-ai/vamos"
+  },
+  "bugs": {
+    "url": "https://github.com/vamos-ai/vamos/issues"
+  },
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "package.json"
+  ],
+  "dependencies": {
+    "@supabase/supabase-js": "2.35.0",
+    "axios": "^1.6.2",
+    "chalk": "^5.3.0",
+    "commander": "^11.1.0",
+    "dotenv": "^16.3.1",
+    "fs-extra": "^11.2.0",
+    "glob": "^10.3.10",
+    "inquirer": "^9.2.10",
+    "mime-types": "^2.1.35",
+    "ora": "^7.0.1",
+    "progress": "^2.0.3"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/inquirer": "^9.0.7",
+    "@types/mime-types": "^2.1.4",
+    "@types/node": "^20.10.4",
+    "@types/progress": "^2.0.7",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.20.3",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

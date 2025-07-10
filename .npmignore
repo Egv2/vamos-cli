@@ -1,0 +1,38 @@
+# Development files
+src/
+*.ts
+!dist/**/*.d.ts
+tsconfig.json
+.env*
+
+# Node modules
+node_modules/
+
+# Development tools
+tsx.config.*
+*.log
+*.lock
+
+# Tests
+test/
+tests/
+__tests__/
+*.test.*
+*.spec.*
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build cache
+.tsbuildinfo 
