@@ -48,7 +48,7 @@ Deployment sırasında aşağıdaki environment variable'lar otomatik ayarlanır
 ```bash
 export VAMOS_SUPABASE_URL="http://167.235.183.107:8000"
 export VAMOS_SUPABASE_ANON_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-export VAMOS_BACKEND_URL="http://167.235.183.107:3001"
+export VAMOS_BACKEND_URL="http://api.vamos-ai.com"
 export VAMOS_DEFAULT_LANGUAGE="auto"
 ```
 

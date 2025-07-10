@@ -122,7 +122,7 @@ elif [[ "$DEPLOYMENT_TYPE" == "vps" ]]; then
 # Vamos CLI Environment Configuration
 export VAMOS_SUPABASE_URL="http://167.235.183.107:8000"
 export VAMOS_SUPABASE_ANON_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyAgCiAgICAicm9sZSI6ICJhbm9uIiwKICAgICJpc3MiOiAic3VwYWJhc2UtZGVtbyIsCiAgICAiaWF0IjogMTY0MTc2OTIwMCwKICAgICJleHAiOiAxNzk5NTM1NjAwCn0.dc_X5iR_VP_qT0zsiyj_I_OZ2T9FtRU2BBNWN8Bu4GE"
-export VAMOS_BACKEND_URL="http://167.235.183.107:3001"
+export VAMOS_BACKEND_URL="http://api.vamos-ai.com"
 export VAMOS_DEFAULT_LANGUAGE="auto"
 export VAMOS_ENV="production"
 export PATH="$PATH:/opt/vamos-cli/dist"
@@ -137,7 +137,7 @@ EOF
     sudo tee "/etc/profile.d/vamos-cli.sh" << 'EOF'
 export VAMOS_SUPABASE_URL="http://167.235.183.107:8000"
 export VAMOS_SUPABASE_ANON_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyAgCiAgICAicm9sZSI6ICJhbm9uIiwKICAgICJpc3MiOiAic3VwYWJhc2UtZGVtbyIsCiAgICAiaWF0IjogMTY0MTc2OTIwMCwKICAgICJleHAiOiAxNzk5NTM1NjAwCn0.dc_X5iR_VP_qT0zsiyj_I_OZ2T9FtRU2BBNWN8Bu4GE"
-export VAMOS_BACKEND_URL="http://167.235.183.107:3001"
+export VAMOS_BACKEND_URL="http://api.vamos-ai.com"
 export VAMOS_DEFAULT_LANGUAGE="auto"
 export VAMOS_ENV="production"
 EOF
